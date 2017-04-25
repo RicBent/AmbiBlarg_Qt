@@ -39,7 +39,7 @@ void loop()
     // Get LED Count
     while(Serial.available() < 2) {}
     u16 ledCount = Serial.read();
-    ledCount = (ledCount << 8) | Serial.read();
+    ledCount |= (Serial.read() << 8);
     
     // Clear all LEDs
     clearStrip();

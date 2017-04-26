@@ -24,8 +24,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    arduinocommunication.cpp \
+    ledmanager.cpp \
+    settings.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    arduinocommunication.h \
+    ledmanager.h \
+    settings.h
 
 FORMS    += mainwindow.ui

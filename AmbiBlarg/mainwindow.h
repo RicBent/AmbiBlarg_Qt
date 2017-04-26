@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "arduinocommunication.h"
+
 #include <QMainWindow>
-#include <QSerialPort>
-#include <QSerialPortInfo>
 
 namespace Ui {
 class MainWindow;
@@ -17,21 +17,18 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-protected:
-    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
-
-public slots:
-    void doStuff();
-
 private slots:
+    void updateStatusLabel(ConnectionStatus status);
+
+//protected:
+//    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
+
     void on_testButton_clicked();
+
+    void on_rescanButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-
-    QSerialPort* serial_port;
-
-    void writeColor(QColor color);
 };
 
 #endif // MAINWINDOW_H
